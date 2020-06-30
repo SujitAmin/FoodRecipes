@@ -18,11 +18,14 @@ public class RecipeViewHolder extends RecyclerView.ViewHolder implements View.On
     public OnRecipeListener onRecipeListener;
     public RecipeViewHolder(@NonNull View itemView, OnRecipeListener onRecipeListener) {
         super(itemView);
+
         this.onRecipeListener = onRecipeListener;
-        this.title = itemView.findViewById(R.id.recipe_title);
-        this.publisher = itemView.findViewById(R.id.recipe_publisher);
-        this.socialScore = itemView.findViewById(R.id.recipe_social_score);
+
+        title = itemView.findViewById(R.id.recipe_title);
+        publisher = itemView.findViewById(R.id.recipe_publisher);
+        socialScore = itemView.findViewById(R.id.recipe_social_score);
         image = itemView.findViewById(R.id.recipe_image);
+
         itemView.setOnClickListener(this);
     }
 
@@ -31,3 +34,4 @@ public class RecipeViewHolder extends RecyclerView.ViewHolder implements View.On
         onRecipeListener.onRecipeClick(getAdapterPosition());
     }
 }
+

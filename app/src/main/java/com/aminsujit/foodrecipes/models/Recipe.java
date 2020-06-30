@@ -6,18 +6,18 @@ import android.os.Parcelable;
 import java.util.Arrays;
 
 public class Recipe implements Parcelable {
+
     private String title;
     private String publisher;
-    private String publisher_url;
     private String[] ingredients;
     private String recipe_id;
     private String image_url;
     private float social_rank;
 
-    public Recipe(String title, String publisher, String publisher_url, String[] ingredients, String recipe_id, String image_url, float social_rank) {
+    public Recipe(String title, String publisher, String[] ingredients, String recipe_id,
+                  String image_url, float social_rank) {
         this.title = title;
         this.publisher = publisher;
-        this.publisher_url = publisher_url;
         this.ingredients = ingredients;
         this.recipe_id = recipe_id;
         this.image_url = image_url;
@@ -30,7 +30,6 @@ public class Recipe implements Parcelable {
     protected Recipe(Parcel in) {
         title = in.readString();
         publisher = in.readString();
-        publisher_url = in.readString();
         ingredients = in.createStringArray();
         recipe_id = in.readString();
         image_url = in.readString();
@@ -65,14 +64,6 @@ public class Recipe implements Parcelable {
         this.publisher = publisher;
     }
 
-    public String getPublisher_url() {
-        return publisher_url;
-    }
-
-    public void setPublisher_url(String publisher_url) {
-        this.publisher_url = publisher_url;
-    }
-
     public String[] getIngredients() {
         return ingredients;
     }
@@ -105,13 +96,11 @@ public class Recipe implements Parcelable {
         this.social_rank = social_rank;
     }
 
-
     @Override
     public String toString() {
         return "Recipe{" +
                 "title='" + title + '\'' +
                 ", publisher='" + publisher + '\'' +
-                ", publisher_url='" + publisher_url + '\'' +
                 ", ingredients=" + Arrays.toString(ingredients) +
                 ", recipe_id='" + recipe_id + '\'' +
                 ", image_url='" + image_url + '\'' +
@@ -128,11 +117,9 @@ public class Recipe implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(title);
         dest.writeString(publisher);
-        dest.writeString(publisher_url);
         dest.writeStringArray(ingredients);
         dest.writeString(recipe_id);
         dest.writeString(image_url);
         dest.writeFloat(social_rank);
     }
-
 }
