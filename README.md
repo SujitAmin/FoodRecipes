@@ -1,8 +1,9 @@
 # Food Recipes App using MVVM architecture and Retrofit
 
+![Test Image 1](https://camo.githubusercontent.com/f2ff1360930d1ee41b564106211c55b7a88c75c8/68747470733a2f2f636f64696e67776974686d697463682e73332e616d617a6f6e6177732e636f6d2f7374617469632f726573742d6170692d6d76766d2d726574726f666974322f696d616765732f6d76766d5f322e706e67)
 The app will retrieve information from the website and display it in various view types. 
 
-##Features
+## Features
 1. Communicating with a webservice (rest api : [recipeapi](https://recipesapi.herokuapp.com)) using Retrofit2
 2. MVVM Architecture: ViewModel, Repository, Client structure
 3. How to design an architecture
